@@ -18,7 +18,10 @@ public func configure(_ app: Application) throws {
     app.databases.use(.postgres(hostname: "localhost", username: "postgres", password: "" ,database: "event"), as: .psql)
 
 //    app.migrations.add(CreateTodo())
-      app.migrations.add(createEvent())
+//      app.migrations.add(createEvent())
+    app.migrations.add(createEventUpdate())
+    app.migrations.add(createPerson())
+  
       try app.autoMigrate().wait()
     
     

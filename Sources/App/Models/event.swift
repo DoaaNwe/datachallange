@@ -11,7 +11,7 @@ import FluentPostgresDriver
 
 final class Event: Model, Content {
 
-    static let schema = "events"
+    static let schema = "eventS"
     
     @ID(key: .id)
     var id: UUID?
@@ -19,11 +19,15 @@ final class Event: Model, Content {
     @Field(key: "title")
     var title: String
     
+    @Field(key: "time")
+    var time: Date
+    
     init() { }
     
-    init (id: UUID? = nil, title: String) {
+    init (id: UUID? = nil, title: String ,time: Date) {
         self.id = id
         self.title = title
+        self.time = time
     }
 
 

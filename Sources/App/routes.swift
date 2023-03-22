@@ -14,8 +14,11 @@ func routes(_ app: Application) throws {
 //        let name = req.parameters.get("name")!
 //        return "Hello, \(name)!"
 //    }
-    
-    
+    //-------- other way get  -------
+//    app.get("Event") { req -> EventLoopFutuer<[Event]> in
+//        return Event.query(on: req.db).all
+        
     try app.register(collection: eventcontroller())
+    try app.register(collection: personcontroller())
     
 }
